@@ -16,7 +16,7 @@
 
 <script>
 import SparkMD5 from 'spark-md5'
-const chunkSize = 1 * 1024 * 1024 //切片大小
+const chunkSize = 0.1 * 1024 * 1024 //切片大小
 export default {
 	name: 'app',
 	data() {
@@ -217,8 +217,7 @@ export default {
 		progressHandler(e) {
 			if (e.loaded / e.total == 1) {
 				this.container.successUpload += 1
-				const fakeUploadPercentage =
-					(this.container.successUpload / this.container.chunksLength) * 100
+				const fakeUploadPercentage = (this.container.successUpload / this.container.chunksLength) * 100
 				this.fakeUploadPercentage = Number(fakeUploadPercentage.toFixed(1))
 			}
 		},

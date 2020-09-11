@@ -10,7 +10,7 @@ const PORT = 3000
 
 router.use('/api', subRouter.routes())
 
-app
+app.use(cors())
 	.use(
 		koaBody({
 			multipart: true
